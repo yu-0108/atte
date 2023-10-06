@@ -51,12 +51,12 @@ class AttendanceController extends Controller
         $timestamp = Attendance::where('user_id', $user->id)->latest()->first();
 
         if (!empty($timestamp->end_work)) {
-            return redirect('/')->with('error1', '既に退勤の打刻がされているか、出勤打刻されていません');
+            return redirect('/')->with('error_end_work', '既に退勤の打刻がされているか、出勤打刻されていません');
         }
         $timestamp->update([
             'end_work' => Carbon::now()
         ]);
 
-        return redirect('')->with('message1', '退勤完了');
+        return redirect('')->with('message_end_work', '退勤完了');
     }
 }

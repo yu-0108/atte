@@ -26,11 +26,11 @@
             @csrf
             @method('PATCH')
             <input class="attendance__button-submit" name="end_work" type="submit" value="勤務終了"></input>
-            <div class="alert__message">@if(session('message1'))
-                {{ session('message1')}}
+            <div class="alert__message">@if(session('message_end_work'))
+                {{ session('message_end_work')}}
                 @endif
-                @if(session('error1'))
-                {{session('error1')}}
+                @if(session('error_end_work'))
+                {{session('error_end_work')}}
                 @endif
             </div>
         </form>
@@ -40,8 +40,8 @@
             <div class="alert__message">@if(session('rest_start_message'))
                 {{ session('rest_start_message')}}
                 @endif
-                @if(session('error'))
-                {{session('error')}}
+                @if(session('rest_start_error'))
+                {{session('rest_start_error')}}
                 @endif
             </div>
         </form>

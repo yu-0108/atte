@@ -5,15 +5,8 @@
     color: #0f5132;
 }
 
-.attendance__alert--danger {
-    padding: 10px 0;
-    border-color: #f5c2c7;
-    background-color: #f8d7da;
+.alert__message {
     color: #842029;
-}
-
-.attendance__alert--danger ul {
-    margin: 0;
 }
 
 .attendance__alert p{
@@ -26,7 +19,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    width: 90%;
+    width: 70%;
+    max-width: 1230px;
     text-align: center;
 }
 
@@ -36,13 +30,15 @@
     border: none;
     border-radius: 3px;
     background:white;
-    font-size: 1rem;
+    font-size: 1.5rem;
     font-weight: bold;
     color: black;
     cursor: pointer;
+    margin-bottom: 25%;
 }
 
 .attendance__content {
+    display: flex;
     justify-content: center;
     width: 100%;
     max-width: 1230px;
