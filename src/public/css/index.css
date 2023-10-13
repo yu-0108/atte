@@ -7,6 +7,8 @@
 
 .alert__message {
     color: #842029;
+    text-align: center;
+    font-size: 2rem;
 }
 
 .attendance__alert p{
@@ -41,7 +43,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 1230px;
 }
 
 .attendance-table {

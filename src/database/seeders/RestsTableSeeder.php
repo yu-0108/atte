@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\User;
+use App\Models\Rest;
 
 class RestsTableSeeder extends Seeder
 {
@@ -13,6 +15,6 @@ class RestsTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Rest::factory()->count(5)->create();
     }
 }

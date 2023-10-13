@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Attendance;
+use App\Models\User;
 
 class AttendancesTableSeeder extends Seeder
 {
@@ -13,6 +15,6 @@ class AttendancesTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        Attendance::factory()->count(5)->create();
     }
 }

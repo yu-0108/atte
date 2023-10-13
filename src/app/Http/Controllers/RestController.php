@@ -26,10 +26,9 @@ class RestController extends Controller
             'user_id' => $user->id,
             'rest_start' => Carbon::now(),
         ]);
-        return redirect('/')->with('rest_start_message','休憩開始が打刻されました');
-
-        
+        return redirect('/')->with('rest_start_message', '休憩開始が打刻されました');
     }
+
 
 
     public function update()
@@ -44,6 +43,6 @@ class RestController extends Controller
             'rest_end' => Carbon::now()
         ]);
 
-        return redirect('')->with('rest_end_message','休憩終了が打刻されました');
+        return redirect('')->with('rest_end_message', '休憩終了が打刻されました');
     }
 }
