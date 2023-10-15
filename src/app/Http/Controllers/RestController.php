@@ -17,6 +17,7 @@ class RestController extends Controller
     {
         $user = Auth::user();
         //休憩終了押してないとエラー
+
         $oldTimestamp = Rest::where('user_id', $user->id)->latest()->first();
         if (empty($oldTimestamp->rest_end)) {
             return redirect('/')->with('rest_start_error', 'すでに休憩開始打刻されています');
@@ -27,6 +28,7 @@ class RestController extends Controller
             'rest_start' => Carbon::now(),
         ]);
         return redirect('/')->with('rest_start_message', '休憩開始が打刻されました');
+
     }
 
 
@@ -44,5 +46,11 @@ class RestController extends Controller
         ]);
 
         return redirect('')->with('rest_end_message', '休憩終了が打刻されました');
+    }
+
+    //勤務表示関連
+    public function show(){
+        $rests = rest::with('user')->get();
+        return view('/attendance', compact('rests'));
     }
 }

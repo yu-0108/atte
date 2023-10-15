@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AttendanceController;
 use App\Http\Controllers\RestController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,6 @@ Route::patch('/rest/update', [RestController::class, 'update']);
 Route::get('/attendance', function () {
     return view('attendance');
 });
+
+//勤務時間表示
+Route::get('/attendance',[AttendanceController::class,'index']);
