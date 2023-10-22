@@ -6,18 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\Attendance;
 use App\Models\Rest;
 use App\Models\User;
-
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $attendances = $request->attendance;
-        $rests = $request->rest;
-        $attendances = Attendance::with(['user:id,name', 'user.rest:id,rest_start'])->orderBy('id', 'asc')->paginate(5);
+        //データ表示
+        $attendances = Attendance::with('user')->get();
 
-        return view('/attendance', [
-            'attendance' => $attendances,
-        ]);
+        return view('/attendance', compact('attendances'));
     }
+
 }

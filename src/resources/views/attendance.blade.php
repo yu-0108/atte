@@ -23,12 +23,12 @@
         </tr>
         @foreach($attendances as $attendance)
         <tr>
-            <td>{{$attendance->user->name}}</td>
+            <td>{{$attendance->user->name}}
+            </td>
             <td>{{$attendance->start_work}}</td>
             <td>{{$attendance->end_work}}</td>
+            @endforeach
         </tr>
-        @endforeach
-
     </table>
 </div>
 

@@ -11,7 +11,7 @@ class Attendance extends Model
     use HasFactory;
     protected $fillable = ['user_id', 'start_work', 'end_work'];
     //ユーザー関連づけ
-    public function user() : BelongsTo
+    public function user()
     {
         return $this->belongsTo(User::class);
     }

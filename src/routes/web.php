@@ -40,4 +40,4 @@ Route::get('/attendance', function () {
 });
 
 //勤務時間表示
-Route::get('/attendance',[AttendanceController::class,'index']);
+Route::get('/attendance',[UserController::class,'index']);
