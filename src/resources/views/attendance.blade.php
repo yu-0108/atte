@@ -30,6 +30,7 @@
             @endforeach
         </tr>
     </table>
+    {{$attendances->links()}}
 </div>
 
 
