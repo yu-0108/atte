@@ -14,7 +14,7 @@ class UserController extends Controller
     {
         //データ表示
         $attendances = Attendance::with('user')->get();
-        $attendances = Attendance::Paginate(5);
+        $attendances = Attendance::simplePaginate(5);
         return view('/attendance', compact('attendances'));
     }
 }

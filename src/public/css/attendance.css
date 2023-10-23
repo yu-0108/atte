@@ -1,0 +1,23 @@
+.search-date{
+    text-align: center;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.attendance-date_table{
+    text-align: center;
+}
+
+.attendance-date__item{
+    width: 80%;
+    max-width: 1230px;
+    font-size: 1rem;
+}
+
+th{
+    padding: 2% 2%
+}
+
+td{
+    padding: 3% 2%;
+}
