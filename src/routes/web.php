@@ -27,10 +27,10 @@ Route::middleware('auth')->group(function () {
 
 //出勤、退勤
 Route::post('/create', [AttendanceController::class, 'create']);
-Route::get('/update',[AttendanceController::class,'update']);
+Route::get('/update', [AttendanceController::class, 'update']);
 Route::patch('/update', [AttendanceController::class, 'update']);
 //休憩
-Route::post('/rest/create',[RestController::class,'create']);
+Route::post('/rest/create', [RestController::class, 'create']);
 Route::get('/rest/update', [RestController::class, 'update']);
 Route::patch('/rest/update', [RestController::class, 'update']);
 
@@ -40,4 +40,4 @@ Route::get('/attendance', function () {
 });
 
 //勤務時間表示
-Route::get('/attendance',[UserController::class,'index']);
+Route::get('/attendance', [UserController::class, 'index']);
