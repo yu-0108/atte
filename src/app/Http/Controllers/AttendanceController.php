@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
-use App\User;
 use App\Models\Attendance;
-use Illuminate\Support\Facades\Auth as FacadesAuth;
-use Illuminate\Http\Response;
+
 
 class AttendanceController extends Controller
 {

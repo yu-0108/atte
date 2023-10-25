@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Models\Rest;
 
-use function PHPUnit\Framework\assertNotEmpty;
-use function PHPUnit\Framework\isEmpty;
-use function PHPUnit\Framework\isNull;
+
 
 class RestController extends Controller
 {
