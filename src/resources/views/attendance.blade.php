@@ -25,8 +25,8 @@
         <tr>
             <td>{{$attendance->user->name}}
             </td>
-            <td>{{$attendance->start_work}}</td>
-            <td>{{$attendance->end_work}}</td>
+            <td>{{\Carbon\Carbon::parse($attendance->start_work)->format('H:i:s')}}</td>
+            <td>{{\Carbon\Carbon::parse($attendance->end_work)->format('H:i:s')}}</td>
             @endforeach
         </tr>
     </table>

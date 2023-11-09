@@ -58,5 +58,13 @@ class AttendanceController extends Controller
         return redirect('')->with('message_end_work', '退勤完了');
     }
 
-
+    public function getAttendance()
+    {
+        //データ表示
+        $attendances = Attendance::with('user')->get();
+        $adjustAttendances = Attendance::adjustAttendance($attendances);
+        $attendances = Attendance::simplePaginate(5);
+        return view('/attendance', compact('adjustAttendances'));
+    }
 }
+

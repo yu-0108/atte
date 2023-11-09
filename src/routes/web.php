@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
+    Route::get('/attendance', [AttendanceController::class, 'getAttendance']);
 });
 
 //出勤、退勤
@@ -35,9 +36,4 @@ Route::get('/rest/update', [RestController::class, 'update']);
 Route::patch('/rest/update', [RestController::class, 'update']);
 
 
-Route::get('/attendance', function () {
-    return view('attendance');
-});
-
 //勤務時間表示
-Route::get('/attendance', [UserController::class, 'index']);
