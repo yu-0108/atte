@@ -62,9 +62,8 @@ class AttendanceController extends Controller
     {
         //データ表示
         $attendances = Attendance::with('user')->get();
-        $adjustAttendances = Attendance::adjustAttendance($attendances);
         $attendances = Attendance::simplePaginate(5);
-        return view('/attendance', compact('adjustAttendances'));
+        return view('/attendance', compact('attendances'));
     }
 }
 
