@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use App\Models\Attendance;
+use Illuminate\Http\Request;
 
 
 class AttendanceController extends Controller
@@ -58,12 +59,14 @@ class AttendanceController extends Controller
         return redirect('')->with('message_end_work', '退勤完了');
     }
 
-    public function getAttendance()
+    public function getAttendance(Request $request)
     {
         //データ表示
-        $attendances = Attendance::with('user')->get();
-        $attendances = Attendance::simplePaginate(5);
-        return view('/attendance', compact('attendances'));
-    }
+        $attendances = Attendance::get();
+
+        $adjustAttendances = Attendance::adjustAttendance($attendances);
+
+        return view('attendance', compact("adjustAttendances"));
+}
 }
 
