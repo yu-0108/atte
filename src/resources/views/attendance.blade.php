@@ -27,10 +27,11 @@
             </td>
             <td>{{\Carbon\Carbon::parse($attendance->start_work)->format('H:i:s')}}</td>
             <td>{{\Carbon\Carbon::parse($attendance->end_work)->format('H:i:s')}}</td>
+            <td></td>
+            <td>{{$attendance->work_time}}</td>
             @endforeach
         </tr>
     </table>
-    {{ $adjustAttendances->links('pagination::default') }}
 </div>
 
 

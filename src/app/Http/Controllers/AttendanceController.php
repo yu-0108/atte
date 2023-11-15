@@ -67,6 +67,5 @@ class AttendanceController extends Controller
         $adjustAttendances = Attendance::adjustAttendance($attendances);
 
         return view('attendance', compact("adjustAttendances"));
+    }
 }
-}
-
